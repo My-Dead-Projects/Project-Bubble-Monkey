@@ -9,8 +9,9 @@ public class TileEditor : Editor {
 	public override void OnInspectorGUI() {
 		Tile tile = (Tile)target;
 
-		tile.x = EditorGUILayout.IntField ("X", tile.x);
-		tile.y = EditorGUILayout.IntField ("Y", tile.y);
+		Vector2 vec = EditorGUILayout.Vector2Field ("Position", new Vector2 (tile.x, tile.y));
+		tile.x = (int)vec.x;
+		tile.y = (int)vec.y;
 
 		// Create a dropdown list of tile types
 		tile.type = (Tile.Type)EditorGUILayout.EnumPopup ("Type", tile.type);
