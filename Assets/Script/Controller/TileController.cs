@@ -2,13 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileController
+public class TileController : MonoBehaviour
 {
-
 	public GameObject tileObject;
-
-	public TileController(GameObject tile)
-	{
-		tileObject = tile;
-	}
 }

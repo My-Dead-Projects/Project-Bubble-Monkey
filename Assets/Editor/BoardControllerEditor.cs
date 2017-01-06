@@ -36,8 +36,11 @@ public class BoardControllerEditor : Editor
 				tileObject.transform.position = new Vector3(x, 0, y);
 				// Set the tile's name
 				tileObject.name = "Tile";
-				// Create a new TileController, passing it the instantiated tile
-				bc.tileControllers[x, y] = new TileController(tileObject);
+				// Get tileObject's controller and give it a reference to tileObject
+				TileController tileController = tileObject.GetComponent<TileController>();
+				tileController.tileObject = tileObject;
+				// Add tileObject's controller to the 2D array of tile controllers
+				bc.tileControllers[x, y] = tileController;
 			}
 		}
 	}
