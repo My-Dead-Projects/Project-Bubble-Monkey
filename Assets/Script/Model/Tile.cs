@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class Tile
 {
-	
+	public enum TileType {
+		Blank, Portal
+	}
+
+	public TileType type;
 }
