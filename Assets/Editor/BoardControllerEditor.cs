@@ -39,8 +39,6 @@ public class BoardControllerEditor : Editor
 				// Get tileObject's controller and give it a reference to tileObject
 				TileController tileController = tileObject.GetComponent<TileController>();
 				tileController.tileObject = tileObject;
-				// The init method is necessary because we can't construct MonoBehaviors
-				tileController.Init();
 				// Add tileObject's controller to the 2D array of tile controllers
 				bc.tileControllers[x, y] = tileController;
 			}
